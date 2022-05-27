@@ -18,28 +18,56 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <!-- 🍔　section -->
-    <section class="hanbarger vh-100">
-      <input id="menu" type="checkbox" />
-      <label for="menu" class="open">🍔</label>
-      <label for="menu" class="back"></label>
-      <aside>
-        <label for="menu" class="close">×</label>
-        <nav>
-          <ul>
-            <li>List01</li>
-            <li>List02</li>
-            <li>List03</li>
-            <li>List04</li>
-            <li>List05</li>
+    <!-- navvar section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">DHU</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">COURSE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">TEACHER</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">WORKS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">GRADUATE</a>
+            </li>
           </ul>
-        </nav>
-        <div class="side">side footer</div>
-      </aside>
-      <main>main</main>
-    </section>
+        </div>
+      </div>
+    </nav>
     <!-- toppage section -->
-    <!-- <section class="toppage vh-100 w-100">main</section> -->
+    <section class="toppage vh-100 w-100">
+      <video src=""></video>
+      <div class="overlay"></div>
+      <div class="title">
+        <h1 class="text-white">クリエイティブな自分へ！</h1>
+      </div>
+    </section>
     <!-- about section -->
     <section class="about vh-100 bg-light">main</section>
     <!-- course section -->
@@ -52,5 +80,10 @@
     <section class="graduate"></section>
     <!-- footer section -->
     <section class="footer"></section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
