@@ -36,7 +36,7 @@ section + section {
 .card-effect {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
   background-color: #fff;
-  padding: 25px;
+  padding: 35px;
   transition: all 0.3s ease;
 }
 .card-effect:hover {
@@ -81,8 +81,80 @@ section + section {
 }
 
 .teacher .team-member img {
-  width: 125px;
-  height: 125px;
+  width: 200px;
+  height: 200px;
   border-radius: 100px;
   object-fit: cover;
+}
+
+.works .carousel {
+  border-radius: 50px;
+}
+.works .carousel .carousel-inner .carousel-item {
+  height: 700px;
+  background: #000;
+}
+.works .carousel .carousel-inner .carousel-item .img-fluid {
+  width: 100%;
+  height: auto;
+  min-height: 700px;
+  opacity: 0.2;
+  object-fit: cover;
+}
+.works .carousel .carousel-inner .carousel-item .img-fluid::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.works .carousel .carousel-inner .carousel-item a {
+  display: block;
+  width: 100%;
+}
+.works .carousel .carousel-inner .carousel-item .show-image {
+  display: block;
+  width: 100%;
+}
+.works .carousel .carousel-inner .carousel-item .carousel-caption {
+  bottom: 24rem;
+  text-shadow: 0 2px 2px #666;
+}
+.works .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+  font-size: 6rem;
+  padding-bottom: 0.5rem;
+  font-weight: 800;
+}
+.works .carousel .carousel-inner .carousel-item .carousel-caption h6 {
+  font-size: 1.3rem;
+  color: #fff;
+  width: 13rem;
+  margin: auto;
+  letter-spacing: -0.2rem;
+}
+.works .carousel .carousel-inner .carousel-item .carousel-caption p {
+  font-size: 2rem;
+  padding-top: 0.3rem;
+}
+.works .carousel .carousel-inner .carousel-item .carousel-caption a {
+  width: 6.5rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  background-color: rgb(244, 139, 20);
+  color: #fff;
+  padding: 2rem;
+  text-shadow: none;
+}
+.works .carousel .carousel-inner .carousel-item .carousel-caption a:hover {
+  background-color: rgb(241, 176, 101);
+}
+.works .carousel .carousel-control-prev-icon:hover {
+  color: aquamarine;
+}
+.works .works-btn a {
+  width: 14rem;
+  margin: auto;
 }/*# sourceMappingURL=style.css.map */

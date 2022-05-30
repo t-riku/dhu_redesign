@@ -112,3 +112,96 @@ section + section {
     }
   }
 }
+
+// works section
+.works {
+  .carousel {
+    border-radius: 50px;
+    .carousel-inner {
+      .carousel-item {
+        height: 700px;
+        // height: auto;
+        background: #000;
+
+        .img-fluid {
+          width: 100%;
+          height: auto;
+          min-height: 700px;
+          opacity: 0.2;
+          object-fit: cover;
+
+          &::after {
+            @include overlay(rgba(0, 0, 0, 0.5));
+            z-index: -1;
+          }
+        }
+
+        a {
+          display: block;
+          width: 100%;
+        }
+
+        .show-image {
+          display: block;
+          width: 100%;
+        }
+
+        .carousel-caption {
+          bottom: 24rem;
+          text-shadow: 0 2px 2px #666;
+          h5 {
+            font-size: 6rem;
+            padding-bottom: 0.5rem;
+            font-weight: 800;
+          }
+
+          h6 {
+            font-size: 1.3rem;
+            color: #fff;
+            width: 13rem;
+            margin: auto;
+            letter-spacing: -0.2rem;
+          }
+
+          p {
+            font-size: 2rem;
+            padding-top: 0.3rem;
+          }
+
+          a {
+            width: 6.5rem;
+            margin: auto;
+            margin-bottom: 2rem;
+            background-color: rgb(244, 139, 20);
+            color: #fff;
+            padding: 2rem;
+            text-shadow: none;
+
+            &:hover {
+              background-color: rgb(241, 176, 101);
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-control-prev-icon {
+      &:hover {
+        color: aquamarine;
+      }
+    }
+  }
+  .works-btn {
+    a {
+      width: 14rem;
+      margin: auto;
+    }
+  }
+}
+
+// @media query
+// @media (max-width: 992px) {
+//   // works section
+//   .works {
+//   }
+// }
