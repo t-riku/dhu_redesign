@@ -15,6 +15,38 @@ body {
   box-sizing: border-box;
   //   navvarでのfixedとtoppageの重なりを防ぐため
   padding-top: 4rem;
+  // background: rgb(122, 87, 51);
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(122, 87, 51, 1) 0%,
+  //   rgba(108, 82, 39, 1) 31%,
+  //   rgba(148, 88, 39, 1) 71%,
+  //   rgba(119, 68, 36, 1) 100%
+  // );
+  background: rgb(199, 141, 81);
+  background: linear-gradient(
+    90deg,
+    rgba(199, 141, 81, 1) 0%,
+    rgba(194, 147, 70, 1) 31%,
+    rgba(207, 122, 53, 1) 65%,
+    rgba(218, 124, 65, 1) 100%
+  );
+  color: $mainTextColor;
+}
+
+h6 {
+  color: #ffa200;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+  color: #f6f6f6;
 }
 
 i {
@@ -34,10 +66,14 @@ li {
   list-style: none;
 }
 
-section + section {
+section {
   padding-top: 60px;
   padding-bottom: 100px;
 }
+// section + section {
+//   padding-top: 60px;
+//   padding-bottom: 100px;
+// }
 
 .card-effect {
   box-shadow: $boxshadow;
@@ -48,6 +84,15 @@ section + section {
   &:hover {
     box-shadow: none;
     transform: translateY(5px);
+  }
+}
+
+.button {
+  a {
+    width: 14rem;
+    margin: auto;
+    color: #fff;
+    border: #fff 1px solid;
   }
 }
 
@@ -91,11 +136,63 @@ section + section {
     transform: translateY(-50%);
     transform: translateX(-50%);
     h1 {
-      font-size: 4rem;
-      font-weight: 1000;
+      font-size: 6rem;
+      font-weight: 900;
       text-shadow: #000 1px 3px 6px;
       letter-spacing: -0.3rem;
     }
+  }
+}
+
+// rest space
+.rest {
+  position: relative;
+  background-image: url(/images/feature_learning.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 22rem;
+  z-index: 0;
+  overflow: hidden;
+
+  // transform: skewY(-5deg);
+  // z-index: 10000;
+
+  // .rest-img {
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
+  //   transform: skewY(5deg);
+  // }
+
+  &::before {
+    content: "";
+    background: inherit;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    position: absolute;
+    // 画像の端までぼけてしまうため切り落とすため
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+  }
+
+  .rest-title {
+    color: rgb(231, 243, 212);
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 21rem;
+    text-align: center;
+    display: inline-block;
+    @include middle();
+    text-shadow: 0 0 10px #333;
   }
 }
 
@@ -109,6 +206,14 @@ section + section {
       // height: 125px;
       border-radius: 100px;
       object-fit: cover;
+    }
+
+    h5 {
+      color: #000;
+    }
+
+    p {
+      color: #000;
     }
   }
 }
@@ -166,12 +271,12 @@ section + section {
           p {
             font-size: 2rem;
             padding-top: 0.3rem;
+            padding-bottom: 1rem;
           }
 
           a {
             width: 6.5rem;
             margin: auto;
-            margin-bottom: 2rem;
             background-color: rgb(244, 139, 20);
             color: #fff;
             padding: 2rem;
@@ -191,17 +296,102 @@ section + section {
       }
     }
   }
-  .works-btn {
+}
+
+// graduate section
+.graduate {
+  img {
+    width: 100%;
+    height: 27rem;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .gra-p-img {
+    // width: 40%;
+    padding-left: 16rem;
+  }
+  .gra-description {
+    // width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // padding: 2rem;
+    padding-left: 10rem;
+
+    h5 {
+      font-size: 2rem;
+    }
+
+    .gra-category {
+      width: 7rem;
+      padding: 0.3rem;
+      font-size: 1rem;
+    }
+
+    .gra-design {
+      border: #97f6a7 solid 1px;
+      color: #97f6a7;
+    }
+
+    .gra-development {
+      border: #a5ecfb solid 1px;
+      color: #a5ecfb;
+    }
+
+    p {
+      width: 70%;
+      font-size: 1.5rem;
+    }
+
     a {
-      width: 14rem;
-      margin: auto;
+      background-color: rgb(244, 139, 20);
+      color: #fff;
+      width: 6rem;
+
+      &:hover {
+        background-color: rgb(241, 176, 101);
+      }
     }
   }
 }
 
 // @media query
-// @media (max-width: 992px) {
-//   // works section
-//   .works {
-//   }
-// }
+@media (max-width: 1200px) {
+  // graduate section
+  .graduate {
+    .gra-p-img {
+      padding-left: 2rem;
+    }
+    .gra-description {
+      padding-left: 4rem;
+
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 772px) {
+  // graduate section
+  .graduate {
+    img {
+      height: 20rem;
+    }
+    .gra-p-img {
+      padding-left: 0rem;
+    }
+    .gra-description {
+      padding-left: 0rem;
+
+      h5 {
+        font-size: 2.2rem;
+        margin-top: 2rem;
+      }
+
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
