@@ -71,42 +71,118 @@ section {
   padding-left: 2rem;
 }
 
-.fixed {
-  position: fixed;
-  top: 0;
-  /*ページ上部の固定する位置*/
-  width: 100%;
-  z-index: 9999;
-  background-color: #fff;
-}
-.fixed .nav-link {
-  color: #000;
-}
-
-nav header {
+/*========= ナビゲーションのためのCSS ===============*/
+header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-nav header img {
-  width: 5rem;
+header img {
+  width: 7rem;
   height: auto;
   color: #fff;
   z-index: 100;
 }
-nav .navbar-toggler {
-  z-index: 10;
-  color: #fff !important;
+
+#g-nav {
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position: fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+  top: -120%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /*ナビの高さ*/
+  background: rgb(40, 39, 39);
+  /*動き*/
+  transition: all 0.3s;
+  /*アクティブクラスがついたら位置を0に*/
+  /*ナビゲーション*/
 }
-nav .nav-list {
-  z-index: 10;
-  padding-right: 5rem;
+#g-nav.panelactive {
+  top: 0;
+  /*ナビゲーションの縦スクロール*/
 }
-nav .nav-list .navbar-nav .nav-item .nav-link {
-  font-size: 1.4rem;
+#g-nav.panelactive #g-nav-list {
+  /*ナビの数が増えた場合縦スクロール*/
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  /*表示する高さ*/
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#g-nav ul {
+  /*ナビゲーション天地中央揃え*/
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#g-nav ul li {
+  text-align: center;
+}
+#g-nav ul li a {
   color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn {
+  position: fixed;
+  z-index: 9999;
+  /*ボタンを最前面に*/
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  /*×に変化*/
+}
+.openbtn span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 14px;
+  height: 1px;
+  border-radius: 2px;
+  background-color: #fff;
+  width: 45%;
+}
+.openbtn span:nth-of-type(1) {
+  top: 15px;
+}
+.openbtn span:nth-of-type(2) {
+  top: 23px;
+}
+.openbtn span:nth-of-type(3) {
+  top: 31px;
+}
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.openbtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
 }
 
 .toppage video {
@@ -136,10 +212,60 @@ nav .nav-list .navbar-nav .nav-item .nav-link {
   transform: translateX(-50%);
 }
 .toppage .title h1 {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 900;
   text-shadow: #000 1px 3px 6px;
   letter-spacing: -0.3rem;
+  /*========= 流れるテキスト ===============*/
+  /*全共通*/
+  /*左右のアニメーション*/
+}
+.toppage .title h1 .slide-in {
+  overflow: hidden;
+  display: inline-block;
+}
+.toppage .title h1 .slide-in_inner {
+  display: inline-block;
+}
+.toppage .title h1 .leftAnime {
+  opacity: 0;
+  /*事前に透過0にして消しておく*/
+}
+.toppage .title h1 .slideAnimeLeftRight {
+  animation-name: slideTextX100;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%);
+    /*要素を左の枠外に移動*/
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    /*要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
+.toppage .title h1 .slideAnimeRightLeft {
+  animation-name: slideTextX-100;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes slideTextX-100 {
+  from {
+    transform: translateX(100%);
+    /*要素を右の枠外に移動*/
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    /*要素を元の位置に移動*/
+    opacity: 1;
+  }
 }
 
 .rest {
@@ -182,6 +308,10 @@ nav .nav-list .navbar-nav .nav-item .nav-link {
   text-shadow: 0 0 10px #333;
 }
 
+.teacher {
+  background: rgb(199, 141, 81);
+  background: linear-gradient(90deg, rgb(199, 141, 81) 0%, rgb(194, 147, 70) 31%, rgb(207, 122, 53) 65%, rgb(218, 124, 65) 100%);
+}
 .teacher .team-member img {
   width: 200px;
   height: 200px;
@@ -195,6 +325,10 @@ nav .nav-list .navbar-nav .nav-item .nav-link {
   color: #000;
 }
 
+.works {
+  background: rgb(199, 141, 81);
+  background: linear-gradient(90deg, rgb(199, 141, 81) 0%, rgb(194, 147, 70) 31%, rgb(207, 122, 53) 65%, rgb(218, 124, 65) 100%);
+}
 .works .carousel {
   border-radius: 50px;
 }
@@ -263,9 +397,13 @@ nav .nav-list .navbar-nav .nav-item .nav-link {
   color: aquamarine;
 }
 
+.graduate {
+  background: rgb(199, 141, 81);
+  background: linear-gradient(90deg, rgb(199, 141, 81) 0%, rgb(194, 147, 70) 31%, rgb(207, 122, 53) 65%, rgb(218, 124, 65) 100%);
+}
 .graduate img {
   width: 100%;
-  height: 27rem;
+  height: 23rem;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -276,7 +414,7 @@ nav .nav-list .navbar-nav .nav-item .nav-link {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 10rem;
+  padding-left: 4rem;
 }
 .graduate .gra-description h5 {
   font-size: 2rem;
