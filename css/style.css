@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&family=Zen+Antique&display=swap");
 html {
   font-size: 62.5%;
@@ -8,7 +9,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  padding-top: 4rem;
   background: rgb(199, 141, 81);
   background: linear-gradient(90deg, rgb(199, 141, 81) 0%, rgb(194, 147, 70) 31%, rgb(207, 122, 53) 65%, rgb(218, 124, 65) 100%);
   color: #fff;
@@ -67,10 +67,46 @@ section {
   margin: auto;
   color: #fff;
   border: #fff 1px solid;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
-.navvar-light .navbar-nav .nav-item .nav-link {
-  font-size: 1.5rem;
+.fixed {
+  position: fixed;
+  top: 0;
+  /*ページ上部の固定する位置*/
+  width: 100%;
+  z-index: 9999;
+  background-color: #fff;
+}
+.fixed .nav-link {
+  color: #000;
+}
+
+nav header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+nav header img {
+  width: 5rem;
+  height: auto;
+  color: #fff;
+  z-index: 100;
+}
+nav .navbar-toggler {
+  z-index: 10;
+  color: #fff !important;
+}
+nav .nav-list {
+  z-index: 10;
+  padding-right: 5rem;
+}
+nav .nav-list .navbar-nav .nav-item .nav-link {
+  font-size: 1.4rem;
+  color: #fff;
 }
 
 .toppage video {
@@ -90,6 +126,7 @@ section {
   height: 100%;
   background-color: #1d1e02;
   mix-blend-mode: overlay;
+  z-index: -10;
 }
 .toppage .title {
   position: absolute;
@@ -279,6 +316,22 @@ section {
   }
   .graduate .gra-description p {
     width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  nav .navbar-toggler {
+    z-index: 10;
+    color: #fff !important;
+  }
+  nav .nav-list {
+    z-index: 10;
+    padding-right: 0rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+  nav .nav-list .navbar-nav .nav-item .nav-link {
+    font-size: 1.4rem;
+    color: #000 !important;
   }
 }
 @media (max-width: 772px) {

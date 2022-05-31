@@ -14,7 +14,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   //   navvarでのfixedとtoppageの重なりを防ぐため
-  padding-top: 4rem;
+  // padding-top: 4rem;
   // background: rgb(122, 87, 51);
   // background: linear-gradient(
   //   90deg,
@@ -93,15 +93,55 @@ section {
     margin: auto;
     color: #fff;
     border: #fff 1px solid;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.fixed {
+  position: fixed;
+  top: 0; /*ページ上部の固定する位置*/
+  width: 100%;
+  z-index: 9999;
+  background-color: #fff;
+
+  .nav-link {
+    color: #000;
   }
 }
 
 // navvar section
-.navvar-light {
-  .navbar-nav {
-    .nav-item {
-      .nav-link {
-        font-size: 1.5rem;
+nav {
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 5rem;
+      height: auto;
+      color: #fff;
+      z-index: 100;
+    }
+  }
+  .navbar-toggler {
+    z-index: 10;
+    color: #fff !important;
+  }
+  // .navvar-light {
+  //   z-index: 15;
+  // }
+  .nav-list {
+    z-index: 10;
+    padding-right: 5rem;
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          font-size: 1.4rem;
+          color: #fff;
+        }
       }
     }
   }
@@ -109,6 +149,18 @@ section {
 
 // toppage section
 .toppage {
+  // header {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   z-index: 10;
+  //   img {
+  //     width: 5rem;
+  //     height: auto;
+  //     color: #fff;
+  //   }
+  // }
   video {
     position: absolute;
     top: 0;
@@ -127,6 +179,7 @@ section {
     height: 100%;
     background-color: #1d1e02;
     mix-blend-mode: overlay;
+    z-index: -10;
   }
 
   .title {
@@ -367,6 +420,33 @@ section {
 
       p {
         width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  // navvar section
+  nav {
+    .navbar-toggler {
+      z-index: 10;
+      color: #fff !important;
+    }
+    // .navvar-light {
+    //   z-index: 15;
+    // }
+    .nav-list {
+      z-index: 10;
+      padding-right: 0rem;
+      padding-left: 1rem;
+      padding-top: 1rem;
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            font-size: 1.4rem;
+            color: #000 !important;
+          }
+        }
       }
     }
   }
