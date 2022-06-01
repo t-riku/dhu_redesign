@@ -72,7 +72,7 @@
     </nav> -->
     <!-- navvar section -->
     <header class="d-flex justify-content-center py-5" id="header">
-      <a href="#home"
+      <a href="#top"
         ><img src="/images/dhu_logo.svg" alt="" class="navbar-brand"
       /></a>
     </header>
@@ -81,20 +81,21 @@
       <div id="g-nav-list">
         <!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
         <ul>
-          <li><a href="#">Top</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Course</a></li>
-          <li><a href="#">Teacher</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">Interview</a></li>
+          <li><a href="#top">Top</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#teacher">Teacher</a></li>
+          <li><a href="#course">Course</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#graduate">Interview</a></li>
         </ul>
       </div>
     </nav>
 
     <!-- toppage section -->
     <section class="toppage vh-100 w-100">
+      <!-- 提出するときはvideoのコメントを消す -->
       <!-- <video
-        src="/images/SummerSonicBG-repeat.mp4"
+        src="/images/production ID_4496268.mp4"
         webkit-playsinline
         playsinline
         muted
@@ -118,17 +119,17 @@
       <div class="sns">
         <ul>
           <li>
-            <a href="https://twitter.com/ONEOKROCK_japan"
+            <a href="https://twitter.com/DHUniv"
               ><i class="bi bi-twitter"></i
             ></a>
           </li>
           <li>
-            <a href="https://www.facebook.com/ONEOKROCK"
+            <a href="https://www.facebook.com/dhuniv?ref=ts"
               ><i class="bi bi-facebook"></i
             ></a>
           </li>
           <li>
-            <a href="https://www.youtube.com/user/ONEOKROCKchannel"
+            <a href="https://www.youtube.com/user/dhwtv/featured"
               ><i class="bi bi-youtube" art="youtube"></i
             ></a>
           </li>
@@ -137,11 +138,30 @@
     </section>
 
     <!-- about section -->
-    <section class="about" id="about">main</section>
+    <section class="about" id="about">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-8 mx-auto text-center">
+            <h6>ABOUT</h6>
+            <h2>GRADUATE INTERVIEW</h2>
+            <h5>~WEBデザイン・WEB開発の卒業生~</h5>
+          </div>
+        </div>
+        <div class="row mt-5 button">
+          <a href="" class="btn btn-outline-dark py-3">OTHER'S GRADUATE</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- rest space -->
+    <div class="rest rest01">
+      <h5 class="rest-title">#creative</h5>
+    </div>
 
     <!--teacher course section -->
     <section class="teacher course">
       <div class="section-wr">
+        <!-- 提出するときはvideoのコメントを消す -->
         <video
           src="/images/SummerSonicBG-repeat.mp4"
           webkit-playsinline
@@ -311,7 +331,7 @@
     </section>
 
     <!-- rest space -->
-    <div class="rest">
+    <div class="rest rest02">
       <h5 class="rest-title">#dhu2022</h5>
     </div>
 
@@ -567,15 +587,13 @@
             <img src="/images/alumni_list_nogawa.jpg" alt="" />
           </div>
           <div class="col-md-7 gra-description">
-            <h5 class="mb-3">
-              和田 泰弘さん　＜株式会社サイバーエージェント＞
-            </h5>
+            <h5 class="mb-3">野川 小百合さん　＜ヤフー株式会社＞</h5>
             <div class="d-flex">
               <p class="gra-design gra-category me-4">WEBデザイン</p>
               <!-- <p class="gra-development gra-category">WEB開発</p> -->
             </div>
             <p>
-              自分で事業をつくりたいという想いからDHUに入学。Webをイチから学び、在学中から、フリーのWebデザイナーになり、作ったサイトの数は100を越えました。サイバーエージェントへの就職も決まりました。就職先にも応援してもらいながら、撮影機材のシェアリングサービスを在学中に起業することもできました。
+              デザイナーに憧れ、デザインを学ぼうとDHUへ入学。未経験からのスタートでしたが、授業では自己表現ではなく、目的に沿ったデザインに挑戦するといった実践的なものが多く、学問で終わらない社会で通用する商業デザインを学ぶことができました。
             </p>
             <a href="" class="btn py-2 px-4 mt-1">More</a>
           </div>
@@ -586,22 +604,52 @@
       </div>
     </section>
 
+    <!-- wave -->
+    <div class="wave">
+      <canvas id="waveCanvas"></canvas>
+    </div>
     <!-- footer section -->
-    <section class="footer"></section>
+    <section class="footer mb-5" id="raindrops">
+      <div class="container">
+        <div class="d-flex justify-content-center py-5">
+          <a href="#top"
+            ><img src="/images/dhu_logo.svg" alt="" class="navbar-brand"
+          /></a>
+        </div>
+        <div class="row pb-5">
+          <ul class="d-flex justify-content-center">
+            <li><a href="#top">Top</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#teacher">Teacher</a></li>
+            <li><a href="#course">Course</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#graduate">Interview</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- <p class="row d-flex justify-content-center">
+        <small>©Digital Hollywood Co.,Ltd. All Rights Reserved.</small>
+      </p> -->
+    </section>
 
+    <!-- bootstrapのjs -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <!-- jqueryのjs -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="/js/flowText.js"></script>
-    <script src="/js/nav.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/js/scroll.js"></script>
+    <!-- toppageの左から右に流れるjs -->
+    <script src="js/flowText.js"></script>
+    <!-- navbarの全画面表示のjs -->
+    <script src="js/nav.js"></script>
+    <!-- footerの波のjs -->
+    <script src="js/wave.js"></script>
   </body>
 </html>

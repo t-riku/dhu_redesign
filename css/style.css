@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&family=Zen+Antique&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Telugu:ital@0;1&display=swap");
 html {
   font-size: 62.5%;
 }
@@ -9,9 +10,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: rgb(199, 141, 81);
-  background: linear-gradient(90deg, rgb(199, 141, 81) 0%, rgb(194, 147, 70) 31%, rgb(207, 122, 53) 65%, rgb(218, 124, 65) 100%);
   color: #fff;
+  background: rgb(102, 52, 38);
+  background: linear-gradient(90deg, rgb(102, 52, 38) 0%, rgb(87, 71, 29) 29%, rgb(96, 72, 31) 73%, rgb(96, 54, 28) 100%);
 }
 
 h6 {
@@ -78,6 +79,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 150;
 }
 header img {
   width: 7rem;
@@ -134,8 +136,11 @@ header img {
   display: block;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 2.5rem;
+}
+#g-nav ul li a:hover {
+  color: #c7c5c5;
 }
 
 /*========= ボタンのためのCSS ===============*/
@@ -208,7 +213,7 @@ header img {
 }
 .toppage .title {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translateY(-50%);
   transform: translateX(-50%);
@@ -218,6 +223,7 @@ header img {
   font-weight: 900;
   text-shadow: #000 1px 3px 6px;
   letter-spacing: -0.3rem;
+  font-family: "Tiro Telugu", serif;
   /*========= 流れるテキスト ===============*/
   /*全共通*/
   /*左右のアニメーション*/
@@ -347,6 +353,7 @@ header img {
   top: 50%;
   right: 2.5rem;
   transform: translateY(-50%);
+  z-index: 160;
 }
 .toppage .sns ul {
   display: block;
@@ -366,7 +373,59 @@ header img {
   font-size: 2rem;
 }
 .toppage .sns ul li a i:hover {
-  color: #ec330e;
+  color: #ec970e;
+}
+
+.about {
+  background: rgb(45, 42, 96);
+  background: linear-gradient(90deg, rgb(45, 62, 100) 0%, rgb(76, 91, 90) 29%, rgb(67, 83, 81) 71%, rgb(45, 62, 100) 100%);
+}
+
+.rest {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 22rem;
+  z-index: 0;
+  overflow: hidden;
+}
+.rest::before {
+  content: "";
+  background: inherit;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+.rest .rest-title {
+  color: rgb(231, 243, 212);
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 21rem;
+  text-align: center;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 10px #333;
+}
+
+.rest01 {
+  background-image: url(/images/pexels-max-deroin-51415.jpg);
+}
+
+.rest02 {
+  background-image: url(/images/pexels-photo-4709285.webp);
 }
 
 .teacher {
@@ -478,6 +537,8 @@ header img {
 }
 .course .section-wr .section-ttl .course-item h4 {
   font-size: 2rem;
+  text-align: center;
+  padding-bottom: 0.2rem;
 }
 .course .section-wr .section-ttl .course-item p {
   font-size: 1.3rem;
@@ -517,49 +578,10 @@ header img {
   background-color: rgba(2, 7, 23, 0.8);
 }
 
-.rest {
-  position: relative;
-  background-image: url(/images/feature_learning.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 22rem;
-  z-index: 0;
-  overflow: hidden;
-}
-.rest::before {
-  content: "";
-  background: inherit;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  z-index: -1;
-}
-.rest .rest-title {
-  color: rgb(231, 243, 212);
-  font-size: 5rem;
-  font-weight: 700;
-  line-height: 21rem;
-  text-align: center;
-  display: inline-block;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 0 0 10px #333;
-}
-
 .works {
-  background: rgb(199, 141, 81);
-  background: linear-gradient(90deg, rgb(199, 141, 81) 0%, rgb(194, 147, 70) 31%, rgb(207, 122, 53) 65%, rgb(218, 124, 65) 100%);
+  padding-top: 10rem;
+  background: rgb(102, 52, 38);
+  background: linear-gradient(90deg, rgb(102, 52, 38) 0%, rgb(87, 71, 29) 29%, rgb(96, 72, 31) 73%, rgb(96, 54, 28) 100%);
 }
 .works .carousel {
   border-radius: 50px;
@@ -631,8 +653,8 @@ header img {
 }
 
 .graduate {
-  background: rgb(199, 141, 81);
-  background: linear-gradient(90deg, rgb(199, 141, 81) 0%, rgb(194, 147, 70) 31%, rgb(207, 122, 53) 65%, rgb(218, 124, 65) 100%);
+  background: rgb(102, 52, 38);
+  background: linear-gradient(90deg, rgb(102, 52, 38) 0%, rgb(87, 71, 29) 29%, rgb(96, 72, 31) 73%, rgb(96, 54, 28) 100%);
 }
 .graduate img {
   width: 100%;
@@ -653,15 +675,17 @@ header img {
   font-size: 2rem;
 }
 .graduate .gra-description .gra-category {
-  width: 7rem;
   padding: 0.3rem;
   font-size: 1rem;
+  border-radius: 1rem;
 }
 .graduate .gra-description .gra-design {
+  width: 7rem;
   border: #97f6a7 solid 1px;
   color: #97f6a7;
 }
 .graduate .gra-description .gra-development {
+  width: 5rem;
   border: #a5ecfb solid 1px;
   color: #a5ecfb;
 }
@@ -676,6 +700,41 @@ header img {
 }
 .graduate .gra-description a:hover {
   background-color: rgb(241, 176, 101);
+}
+
+.wave {
+  background: rgb(102, 52, 38);
+  background: linear-gradient(90deg, rgb(102, 52, 38) 0%, rgb(87, 71, 29) 29%, rgb(96, 72, 31) 73%, rgb(96, 54, 28) 100%);
+  position: relative;
+  height: 200px;
+  /*何も表示されない場合は各波の親要素に高さを持たせましょう。*/
+}
+
+canvas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer {
+  background-color: #fff;
+  padding: 20px;
+  z-index: 100;
+}
+.footer img {
+  width: 100%;
+  height: 3rem;
+}
+.footer ul li {
+  margin-left: 2rem;
+}
+.footer ul li a {
+  color: #000;
+  font-size: 1.7rem;
+}
+.footer ul li a:hover {
+  color: #c7c5c5;
 }
 
 @media (max-width: 1200px) {
