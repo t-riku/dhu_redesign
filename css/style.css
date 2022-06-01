@@ -435,11 +435,15 @@ header img {
 .teacher #teacher {
   margin-top: 10rem;
 }
+.teacher .team-member {
+  height: 40rem;
+}
 .teacher .team-member img {
   width: 200px;
   height: 200px;
   border-radius: 100px;
   object-fit: cover;
+  object-position: center top;
 }
 .teacher .team-member h5 {
   color: #000;
@@ -455,7 +459,7 @@ header img {
 .course .section-wr {
   position: relative;
   width: 100vw;
-  height: 250vh;
+  height: 240vh;
   overflow: hidden;
 }
 .course .section-wr video {
@@ -721,6 +725,7 @@ canvas {
   background-color: #fff;
   padding: 20px;
   z-index: 100;
+  padding-bottom: 7rem;
 }
 .footer img {
   width: 100%;
@@ -738,6 +743,10 @@ canvas {
 }
 
 @media (max-width: 1200px) {
+  .toppage .title h1 {
+    font-size: 4rem;
+  }
+
   .graduate .gra-p-img {
     padding-left: 2rem;
   }
@@ -749,6 +758,10 @@ canvas {
   }
 }
 @media (max-width: 992px) {
+  .toppage .title h1 {
+    font-size: 3rem;
+  }
+
   nav .navbar-toggler {
     z-index: 10;
     color: #fff !important;
@@ -763,28 +776,110 @@ canvas {
     font-size: 1.4rem;
     color: #000 !important;
   }
-}
-@media (max-width: 772px) {
-  .course .course-wr {
-    position: relative;
-    width: 100vw;
-    height: 180vh;
-    overflow: hidden;
+
+  .teacher #teacher {
+    margin-top: 6rem;
   }
-  .course .course-wr .course-ttl .course-design-wr {
-    padding-right: 0rem;
+  .teacher .team-member {
+    height: 36rem;
   }
-  .course .course-wr .course-ttl .course-development-wr {
-    padding-left: 0rem;
+  .teacher .team-member img {
+    width: 150px;
+    height: 150px;
   }
-  .course .course-wr .course-ttl h3 {
+
+  .course .section-wr {
+    height: 200vh;
+  }
+  .course .section-wr .section-ttl .course-design-wr {
+    padding-right: 0.5rem;
+  }
+  .course .section-wr .section-ttl .course-development-wr {
+    padding-left: 0.5rem;
+  }
+  .course .section-wr .section-ttl h3 {
     margin-bottom: 1rem;
   }
-  .course .course-wr .course-ttl .course-item {
+  .course .section-wr .section-ttl .course-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.1rem;
+  }
+  .course .section-wr .section-ttl .course-item p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  .works {
+    padding-top: 8rem;
+  }
+  .works .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+    font-size: 5rem;
+  }
+  .works .carousel .carousel-inner .carousel-item .carousel-caption h6 {
+    font-size: 1.3rem;
+  }
+  .works .carousel .carousel-inner .carousel-item .carousel-caption p {
+    font-size: 1.9rem;
+  }
+  .works .carousel .carousel-inner .carousel-item .carousel-caption a {
+    width: 6.5rem;
+    padding: 2rem;
+  }
+}
+@media (max-width: 772px) {
+  .toppage .title h1 {
+    font-size: 2.7rem;
+  }
+  .toppage .copyright {
+    left: -10%;
+  }
+
+  .teacher #teacher {
+    margin-top: 4rem;
+  }
+  .teacher .team-member {
+    height: 38rem;
+  }
+  .teacher .team-member img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .course .section-wr {
+    height: 380vh;
+  }
+  .course .section-wr .section-ttl .course-design-wr {
+    padding-right: 0rem;
+  }
+  .course .section-wr .section-ttl .course-development-wr {
+    padding-left: 0rem;
+  }
+  .course .section-wr .section-ttl h3 {
+    margin-bottom: 1rem;
+  }
+  .course .section-wr .section-ttl .course-item {
     margin-bottom: 0.9rem;
   }
-  .course .course-wr .course-ttl .course-item img {
+  .course .section-wr .section-ttl .course-item img {
     height: 17rem;
+  }
+  .course .section-wr .section-ttl .course-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.1rem;
+  }
+  .course .section-wr .section-ttl .course-item p {
+    margin-bottom: 0;
+  }
+
+  .works .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+    font-size: 5rem;
+  }
+  .works .carousel .carousel-inner .carousel-item .carousel-caption p {
+    font-size: 1.8rem;
+    padding-bottom: 0rem;
+  }
+  .works .carousel .carousel-inner .carousel-item .carousel-caption a {
+    width: 5.5rem;
   }
 
   .graduate img {
@@ -802,5 +897,61 @@ canvas {
   }
   .graduate .gra-description p {
     width: 100%;
+  }
+}
+@media (max-width: 630px) {
+  .toppage .title h1 {
+    font-size: 2rem;
+  }
+  .toppage .copyright {
+    left: -12%;
+  }
+}
+@media (max-width: 441px) {
+  .toppage .title h1 {
+    font-size: 1.74rem;
+  }
+  .toppage .copyright {
+    left: -22%;
+  }
+
+  .course .section-wr {
+    height: 350vh;
+  }
+  .course .section-wr .section-ttl h3 {
+    margin-bottom: 0.5rem;
+  }
+  .course .section-wr .section-ttl .course-item {
+    margin-bottom: 0.9rem;
+  }
+  .course .section-wr .section-ttl .course-item img {
+    height: 17rem;
+  }
+  .course .section-wr .section-ttl .course-item h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0rem;
+  }
+  .course .section-wr .section-ttl .course-item p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    line-height: 1.6rem;
+  }
+
+  .works .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+    font-size: 4rem;
+    line-height: 3.8rem;
+  }
+  .works .carousel .carousel-inner .carousel-item .carousel-caption p {
+    font-size: 1.7rem;
+  }
+
+  .footer img {
+    height: 2rem;
+  }
+  .footer ul li {
+    margin-left: 1rem;
+  }
+  .footer ul li a {
+    font-size: 1.4rem;
   }
 }/*# sourceMappingURL=style.css.map */
