@@ -75,7 +75,7 @@ li {
 }
 
 section {
-  padding-top: 60px;
+  padding-top: 70px;
   padding-bottom: 100px;
 }
 // section + section {
@@ -131,7 +131,7 @@ header {
   left: 0;
   width: 100%;
   height: 100vh; /*ナビの高さ*/
-  background: rgb(40, 39, 39);
+  background: #fff;
   /*動き*/
   transition: all 0.3s;
   /*アクティブクラスがついたら位置を0に*/
@@ -159,7 +159,7 @@ header {
     li {
       text-align: center;
       a {
-        color: #fff;
+        color: #000;
         text-decoration: none;
         padding: 10px;
         display: block;
@@ -207,6 +207,7 @@ header {
         left: 18px;
         transform: translateY(6px) rotate(-45deg);
         width: 30%;
+        background-color: #000;
       }
       &:nth-of-type(2) {
         opacity: 0;
@@ -216,6 +217,7 @@ header {
         left: 18px;
         transform: translateY(-6px) rotate(45deg);
         width: 30%;
+        background-color: #000;
       }
     }
   }
@@ -313,6 +315,149 @@ header {
       }
     }
   }
+
+  .scrolldown4 {
+    /*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+    /*スクロールダウン全体の場所*/
+
+    /*描画位置※位置は適宜調整してください*/
+    position: absolute;
+    bottom: 2%;
+    right: 50%;
+    /*矢印の動き1.5秒かけて永遠にループ*/
+    animation: arrowmove 1.5s ease-in-out infinite;
+
+    /* 矢印の描写 */
+    &:before {
+      content: "";
+      /*描画位置*/
+      position: absolute;
+      bottom: 0;
+      right: -3px;
+      /*矢印の形状*/
+      width: 1px;
+      height: 20px;
+      background: #eee;
+      transform: skewX(-15deg);
+    }
+    &:after {
+      content: "";
+      /*描画位置*/
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      /*矢印の形状*/
+      width: 1px;
+      height: 50px;
+      background: #eee;
+    }
+
+    /*Scrollテキストの描写*/
+    span {
+      /*描画位置*/
+      position: absolute;
+      left: -20px;
+      bottom: 10px;
+      /*テキストの形状*/
+      color: #eee;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      /*縦書き設定*/
+      -ms-writing-mode: tb-rl;
+      -webkit-writing-mode: vertical-rl;
+      writing-mode: vertical-rl;
+    }
+    /*下からの距離が変化して全体が下→上→下に動く*/
+    @keyframes arrowmove {
+      0% {
+        bottom: 1%;
+      }
+      50% {
+        bottom: 2%;
+      }
+      100% {
+        bottom: 1%;
+      }
+    }
+  }
+
+  .copyright {
+    position: absolute;
+    top: 50%;
+    left: -5.5%;
+    transform: translateY(-50%);
+    transform: rotate(90deg);
+    transform-origin: center;
+    p {
+      font-size: 0.5rem;
+      font-weight: 200;
+    }
+  }
+
+  .sns {
+    position: absolute;
+    top: 50%;
+    right: 2.5rem;
+    transform: translateY(-50%);
+
+    ul {
+      display: block;
+      flex-direction: column !important;
+
+      li {
+        padding-bottom: 1rem;
+
+        a {
+          display: inline-block;
+          transition: all 0.25s ease;
+          &:hover {
+            transform: translateY(-4px);
+          }
+          i {
+            font-size: 2rem;
+            &:hover {
+              color: #ec330e;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// teacher section
+.teacher {
+  background: rgb(199, 141, 81);
+  background: linear-gradient(
+    90deg,
+    rgba(199, 141, 81, 1) 0%,
+    rgba(194, 147, 70, 1) 31%,
+    rgba(207, 122, 53, 1) 65%,
+    rgba(218, 124, 65, 1) 100%
+  );
+
+  #teacher {
+    margin-top: 10rem;
+  }
+
+  .team-member {
+    img {
+      width: 200px;
+      height: 200px;
+      // width: 125px;
+      // height: 125px;
+      border-radius: 100px;
+      object-fit: cover;
+    }
+
+    h5 {
+      color: #000;
+    }
+
+    p {
+      color: #000;
+    }
+  }
 }
 
 // course section
@@ -320,10 +465,10 @@ header {
   padding: 0;
   height: 100%;
 
-  .music_wr {
+  .section-wr {
     position: relative;
     width: 100vw;
-    height: 150vh;
+    height: 250vh;
     overflow: hidden;
 
     video {
@@ -342,7 +487,7 @@ header {
       z-index: 0;
     }
 
-    .music-ttl {
+    .section-ttl {
       position: absolute;
       top: 0;
       left: 0;
@@ -350,6 +495,106 @@ header {
       height: 100%;
       color: #ffffff;
       z-index: 1;
+
+      .course-design-wr {
+        padding-right: 1.5rem;
+      }
+
+      .course-development-wr {
+        padding-left: 1.5rem;
+      }
+
+      h3 {
+        margin-bottom: 2rem;
+        /*線の基点とするためrelativeを指定*/
+        position: relative;
+        &:hover {
+          &::after {
+            transform: scale(1, 1); /*X方向にスケール拡大*/
+          }
+        }
+        &::after {
+          content: "";
+          /*絶対配置で線の位置を決める*/
+          position: absolute;
+          bottom: -2.5px;
+          left: 40%;
+          /*線の形状*/
+          width: 20%;
+          height: 1.5px;
+          /*アニメーションの指定*/
+          transition: all 0.3s;
+          transform: scale(0, 1); /*X方向0、Y方向1*/
+          transform-origin: center top; /*上部中央基点*/
+        }
+      }
+      .design-title {
+        &:hover {
+          color: #a3febe;
+        }
+        &::after {
+          background: #a3febe;
+        }
+      }
+      .development-title {
+        &:hover {
+          color: #7ddcf6;
+        }
+        &::after {
+          background: #7ddcf6;
+        }
+      }
+
+      .course-item {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        border: 0.5px solid #fff;
+        h4 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1.3rem;
+        }
+        img {
+          transition: all 0.25s ease;
+          width: 100%;
+          height: 20rem;
+          object-fit: cover;
+        }
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          // background-color: rgba(7, 22, 0, 0.7);
+          padding: 30px;
+          display: flex;
+          align-items: center;
+          // justify-content: center;
+          opacity: 0;
+          transition: all 0.3s ease;
+          h2,
+          h5 {
+            color: #fff;
+          }
+        }
+        &:hover {
+          .overlay {
+            opacity: 1;
+          }
+          img {
+            transform: scale(1.1);
+          }
+        }
+        .course-design {
+          background-color: rgba(7, 24, 1, 0.8);
+        }
+        .course-development {
+          background-color: rgba(2, 7, 23, 0.8);
+        }
+      }
     }
   }
 }
@@ -403,36 +648,6 @@ header {
     display: inline-block;
     @include middle();
     text-shadow: 0 0 10px #333;
-  }
-}
-
-// teacher section
-.teacher {
-  background: rgb(199, 141, 81);
-  background: linear-gradient(
-    90deg,
-    rgba(199, 141, 81, 1) 0%,
-    rgba(194, 147, 70, 1) 31%,
-    rgba(207, 122, 53, 1) 65%,
-    rgba(218, 124, 65, 1) 100%
-  );
-  .team-member {
-    img {
-      width: 200px;
-      height: 200px;
-      // width: 125px;
-      // height: 125px;
-      border-radius: 100px;
-      object-fit: cover;
-    }
-
-    h5 {
-      color: #000;
-    }
-
-    p {
-      color: #000;
-    }
   }
 }
 
@@ -635,6 +850,37 @@ header {
 }
 
 @media (max-width: 772px) {
+  // course section
+  .course {
+    .course-wr {
+      position: relative;
+      width: 100vw;
+      height: 180vh;
+      overflow: hidden;
+
+      .course-ttl {
+        .course-design-wr {
+          padding-right: 0rem;
+        }
+
+        .course-development-wr {
+          padding-left: 0rem;
+        }
+
+        h3 {
+          margin-bottom: 1rem;
+        }
+
+        .course-item {
+          margin-bottom: 0.9rem;
+          img {
+            height: 17rem;
+          }
+        }
+      }
+    }
+  }
+
   // graduate section
   .graduate {
     img {
