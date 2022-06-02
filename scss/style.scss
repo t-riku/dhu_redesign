@@ -424,11 +424,68 @@ header {
   background: rgb(45, 42, 96);
   background: linear-gradient(
     90deg,
-    rgba(45, 62, 100, 1) 0%,
+    #38485e 0%,
     rgba(76, 91, 90, 1) 29%,
     rgba(67, 83, 81, 1) 71%,
-    rgba(45, 62, 100, 1) 100%
+    #38485e 100%
   );
+
+  .about-text-bg {
+    background-color: rgb(26, 26, 26);
+    padding: 5rem;
+    border-radius: 1rem;
+
+    &:hover {
+      background-color: rgb(236, 236, 236);
+      border: 1px solid rgb(30, 30, 30);
+      h3,
+      p {
+        color: #000;
+      }
+    }
+    h3,
+    p {
+      color: #fff;
+    }
+    h3 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 1.7rem;
+      /*線の基点とするためrelativeを指定*/
+      position: relative;
+      &:hover {
+        &::after {
+          transform: scale(1, 1); /*X方向にスケール拡大*/
+        }
+      }
+      &::after {
+        content: "";
+        /*絶対配置で線の位置を決める*/
+        position: absolute;
+        bottom: -2.5px;
+        left: 30%;
+        /*線の形状*/
+        width: 40%;
+        height: 1.5px;
+        /*アニメーションの指定*/
+        transition: all 0.3s;
+        transform: scale(0, 1); /*X方向0、Y方向1*/
+        transform-origin: center top; /*上部中央基点*/
+      }
+    }
+    .about-title01 {
+      // &:hover {
+      //   color: #000;
+      // }
+      &::after {
+        background: #000;
+      }
+    }
+    p {
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+    }
+  }
 }
 
 // rest space
@@ -547,7 +604,7 @@ header {
     }
 
     &::after {
-      @include overlay(rgba(0, 0, 0, 0.7));
+      @include overlay(rgba(0, 0, 0, 0.6));
       z-index: 0;
     }
 
@@ -1031,7 +1088,7 @@ canvas {
   // course section
   .course {
     .section-wr {
-      height: 380vh;
+      height: 340vh;
 
       .section-ttl {
         .course-design-wr {
@@ -1120,6 +1177,27 @@ canvas {
       left: -12%;
     }
   }
+  // graduate section
+  .graduate {
+    img {
+      height: 20rem;
+    }
+    .gra-p-img {
+      padding: 0 1rem;
+    }
+    .gra-description {
+      padding: 0 1rem;
+
+      h5 {
+        font-size: 2rem;
+        margin-top: 1.5rem;
+      }
+      a {
+        display: inline-block;
+        margin: 0 auto;
+      }
+    }
+  }
 }
 
 // スマホ版
@@ -1179,6 +1257,27 @@ canvas {
             }
           }
         }
+      }
+    }
+  }
+  // graduate section
+  .graduate {
+    padding-bottom: 0px;
+    img {
+      height: 15rem;
+    }
+    .gra-p-img {
+      padding: 0 1rem;
+    }
+    .gra-description {
+      padding: 0 1rem;
+
+      h5 {
+        font-size: 1.8rem;
+        margin-top: 1rem;
+      }
+      p {
+        line-height: 1.8rem;
       }
     }
   }

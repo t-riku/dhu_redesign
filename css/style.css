@@ -378,7 +378,58 @@ header img {
 
 .about {
   background: rgb(45, 42, 96);
-  background: linear-gradient(90deg, rgb(45, 62, 100) 0%, rgb(76, 91, 90) 29%, rgb(67, 83, 81) 71%, rgb(45, 62, 100) 100%);
+  background: linear-gradient(90deg, #38485e 0%, rgb(76, 91, 90) 29%, rgb(67, 83, 81) 71%, #38485e 100%);
+}
+.about .about-text-bg {
+  background-color: rgb(26, 26, 26);
+  padding: 5rem;
+  border-radius: 1rem;
+}
+.about .about-text-bg:hover {
+  background-color: rgb(236, 236, 236);
+  border: 1px solid rgb(30, 30, 30);
+}
+.about .about-text-bg:hover h3,
+.about .about-text-bg:hover p {
+  color: #000;
+}
+.about .about-text-bg h3,
+.about .about-text-bg p {
+  color: #fff;
+}
+.about .about-text-bg h3 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 1.7rem;
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
+}
+.about .about-text-bg h3:hover::after {
+  transform: scale(1, 1);
+  /*X方向にスケール拡大*/
+}
+.about .about-text-bg h3::after {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: -2.5px;
+  left: 30%;
+  /*線の形状*/
+  width: 40%;
+  height: 1.5px;
+  /*アニメーションの指定*/
+  transition: all 0.3s;
+  transform: scale(0, 1);
+  /*X方向0、Y方向1*/
+  transform-origin: center top;
+  /*上部中央基点*/
+}
+.about .about-text-bg .about-title01::after {
+  background: #000;
+}
+.about .about-text-bg p {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
 }
 
 .rest {
@@ -474,7 +525,7 @@ header img {
 .course .section-wr::after {
   content: "";
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   top: 0;
@@ -846,7 +897,7 @@ canvas {
   }
 
   .course .section-wr {
-    height: 380vh;
+    height: 340vh;
   }
   .course .section-wr .section-ttl .course-design-wr {
     padding-right: 0rem;
@@ -906,6 +957,24 @@ canvas {
   .toppage .copyright {
     left: -12%;
   }
+
+  .graduate img {
+    height: 20rem;
+  }
+  .graduate .gra-p-img {
+    padding: 0 1rem;
+  }
+  .graduate .gra-description {
+    padding: 0 1rem;
+  }
+  .graduate .gra-description h5 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+  }
+  .graduate .gra-description a {
+    display: inline-block;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 441px) {
   .toppage .title h1 {
@@ -943,6 +1012,26 @@ canvas {
   }
   .works .carousel .carousel-inner .carousel-item .carousel-caption p {
     font-size: 1.7rem;
+  }
+
+  .graduate {
+    padding-bottom: 0px;
+  }
+  .graduate img {
+    height: 15rem;
+  }
+  .graduate .gra-p-img {
+    padding: 0 1rem;
+  }
+  .graduate .gra-description {
+    padding: 0 1rem;
+  }
+  .graduate .gra-description h5 {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+  .graduate .gra-description p {
+    line-height: 1.8rem;
   }
 
   .footer img {
