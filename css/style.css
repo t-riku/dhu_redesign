@@ -70,6 +70,7 @@ section {
   border: #fff 1px solid;
   padding-right: 2rem;
   padding-left: 2rem;
+  margin-top: 3rem;
 }
 
 /*========= ナビゲーションのためのCSS ===============*/
@@ -380,6 +381,17 @@ header img {
   background: rgb(45, 42, 96);
   background: linear-gradient(90deg, #38485e 0%, rgb(76, 91, 90) 29%, rgb(67, 83, 81) 71%, #38485e 100%);
 }
+.about .button {
+  padding-top: 0.7rem;
+  padding-bottom: 10rem;
+}
+.about .button ul {
+  display: flex;
+  justify-content: center;
+}
+.about .button ul li + li {
+  margin-left: 5rem;
+}
 .about .about-text-bg {
   background-color: rgb(26, 26, 26);
   padding: 5rem;
@@ -413,9 +425,9 @@ header img {
   /*絶対配置で線の位置を決める*/
   position: absolute;
   bottom: -2.5px;
-  left: 30%;
+  left: 33%;
   /*線の形状*/
-  width: 40%;
+  width: 35%;
   height: 1.5px;
   /*アニメーションの指定*/
   transition: all 0.3s;
@@ -430,6 +442,93 @@ header img {
 .about .about-text-bg p {
   font-size: 1.6rem;
   line-height: 2.8rem;
+}
+.about .fluid-field {
+  padding-top: 8rem;
+}
+.about .fluid-field .fluid-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about .fluid-field .fluid-text:hover h4 span {
+  color: rgb(222, 117, 12);
+  -webkit-text-stroke: 0.6px #fff;
+}
+.about .fluid-field .fluid-text h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+  width: 80%;
+}
+.about .fluid-field .fluid-text h4 span {
+  font-size: 7.5rem;
+  padding-right: 0.5rem;
+}
+.about .fluid-field .fluid-text p {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  width: 80%;
+}
+.about .fluid-field .fluid {
+  width: 55vh;
+  /*横幅*/
+  height: 35vh;
+  /*縦幅*/
+  background-size: cover;
+  animation: fluidrotate 20s ease 0s infinite;
+  /*アニメーションの設定*/
+}
+.about .fluid-field .fluid01 {
+  background-image: url(../images/about04.jpg);
+  /*背景色*/
+}
+.about .fluid-field .fluid02 {
+  background-image: url(../images/about01.jpg);
+  /*背景色*/
+}
+.about .fluid-field .fluid03 {
+  background-image: url(../images/about05.webp);
+  /*背景色*/
+}
+@keyframes fluidrotate {
+  0%, 100% {
+    border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  }
+  14% {
+    border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+  }
+  28% {
+    border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+  }
+  42% {
+    border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+  }
+  56% {
+    border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+  }
+  70% {
+    border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+  }
+  84% {
+    border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+  }
+}
+.about .fluid-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.about .fluid-reverse .fluid-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.about .fluid-reverse .fluid-text h4,
+.about .fluid-reverse .fluid-text p {
+  margin-left: auto;
+  margin-right: 0;
+  width: 80%;
+  display: block;
 }
 
 .rest {
@@ -472,11 +571,11 @@ header img {
 }
 
 .rest01 {
-  background-image: url(/images/pexels-max-deroin-51415.jpg);
+  background-image: url(../images/pexels-max-deroin-51415.jpg);
 }
 
 .rest02 {
-  background-image: url(/images/pexels-photo-4709285.webp);
+  background-image: url(../images/pexels-photo-4709285.webp);
 }
 
 .teacher {
@@ -501,6 +600,7 @@ header img {
 }
 .teacher .team-member p {
   color: #000;
+  font-size: 1rem;
 }
 
 .course {
@@ -634,7 +734,7 @@ header img {
 }
 
 .works {
-  padding-top: 10rem;
+  padding-top: 15rem;
   background: rgb(102, 52, 38);
   background: linear-gradient(90deg, rgb(102, 52, 38) 0%, rgb(87, 71, 29) 29%, rgb(96, 72, 31) 73%, rgb(96, 54, 28) 100%);
 }
@@ -758,8 +858,6 @@ header img {
 }
 
 .wave {
-  background: rgb(102, 52, 38);
-  background: linear-gradient(90deg, rgb(102, 52, 38) 0%, rgb(87, 71, 29) 29%, rgb(96, 72, 31) 73%, rgb(96, 54, 28) 100%);
   position: relative;
   height: 200px;
   /*何も表示されない場合は各波の親要素に高さを持たせましょう。*/
@@ -798,6 +896,29 @@ canvas {
     font-size: 4rem;
   }
 
+  .about .fluid-field .fluid {
+    width: 45vh;
+    /*横幅*/
+    height: 35vh;
+    /*縦幅*/
+  }
+  .about .fluid-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .about .fluid-reverse .fluid-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .about .fluid-reverse .fluid-text h4,
+.about .fluid-reverse .fluid-text p {
+    margin-left: auto;
+    margin-right: 0;
+    width: 80%;
+    display: block;
+  }
+
   .graduate .gra-p-img {
     padding-left: 2rem;
   }
@@ -826,6 +947,23 @@ canvas {
   nav .nav-list .navbar-nav .nav-item .nav-link {
     font-size: 1.4rem;
     color: #000 !important;
+  }
+
+  .about .fluid-field .fluid-text h4 {
+    font-size: 2rem;
+    margin-bottom: 1.3rem;
+    width: 100%;
+  }
+  .about .fluid-field .fluid-text p {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    width: 100%;
+  }
+  .about .fluid-field .fluid {
+    width: 55vh;
+    /*横幅*/
+    height: 25vh;
+    /*縦幅*/
   }
 
   .teacher #teacher {
@@ -885,6 +1023,14 @@ canvas {
     left: -10%;
   }
 
+  .about .button {
+    padding-top: 0.7rem;
+    padding-bottom: 7rem;
+  }
+  .about .button ul li + li {
+    margin-left: 2rem;
+  }
+
   .teacher #teacher {
     margin-top: 4rem;
   }
@@ -897,13 +1043,14 @@ canvas {
   }
 
   .course .section-wr {
-    height: 340vh;
+    height: 360vh;
   }
   .course .section-wr .section-ttl .course-design-wr {
     padding-right: 0rem;
+    margin-bottom: 4rem;
   }
   .course .section-wr .section-ttl .course-development-wr {
-    padding-left: 0rem;
+    padding-right: 0rem;
   }
   .course .section-wr .section-ttl h3 {
     margin-bottom: 1rem;
@@ -958,6 +1105,13 @@ canvas {
     left: -12%;
   }
 
+  .about .fluid-field .fluid {
+    width: 45vh;
+    /*横幅*/
+    height: 25vh;
+    /*縦幅*/
+  }
+
   .graduate img {
     height: 20rem;
   }
@@ -982,6 +1136,40 @@ canvas {
   }
   .toppage .copyright {
     left: -22%;
+  }
+
+  .about .button {
+    padding-top: 0;
+    padding-bottom: 7rem;
+    padding: 0;
+  }
+  .about .button ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about .button ul li + li {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  .about .button ul li a {
+    width: 14rem;
+    margin-top: 0;
+  }
+  .about .about-text-bg {
+    padding: 3.5rem 1rem;
+  }
+  .about .about-text-bg h3 {
+    font-size: 2.2rem;
+  }
+  .about .about-text-bg p {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+  .about .fluid-field .fluid {
+    width: 33vh;
+    /*横幅*/
+    height: 20vh;
+    /*縦幅*/
   }
 
   .course .section-wr {
@@ -1042,5 +1230,69 @@ canvas {
   }
   .footer ul li a {
     font-size: 1.4rem;
+  }
+}
+/*上からフェードイン*/
+.fade-in-top {
+  opacity: 0;
+  animation: fadein-top 1.5s 0.3s ease-out forwards;
+}
+
+@keyframes fadein-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*下からフェードイン*/
+.fade-in-bottom {
+  opacity: 0;
+  animation: fadein-bottom 1.5s 0 ease-out forwards;
+}
+
+@keyframes fadein-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*左からフェードイン*/
+.fade-in-left {
+  opacity: 0;
+  animation: fadein-left 1.5s 0 ease-out forwards;
+}
+
+@keyframes fadein-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/*右からフェードイン*/
+.fade-in-right {
+  opacity: 0;
+  animation: fadein-right 1.5s 0 ease-out forwards;
+}
+
+@keyframes fadein-right {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }/*# sourceMappingURL=style.css.map */
